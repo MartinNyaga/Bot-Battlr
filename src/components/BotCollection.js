@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BotCollection({bots, addToArmy}){
+export default function BotCollection({bots, addToArmy, botDeletion}){
   
     //Renderd bots
         return(
@@ -8,6 +8,9 @@ export default function BotCollection({bots, addToArmy}){
                 {bots.map((bot) => (
                     <div className="element" key={bot.id} onClick={()=> addToArmy(bot)} >
                         <img src={bot.avatar_url} alt={bot.name}/>
+                        <div>
+                        <button className="delete-button" onClick={()=> botDeletion(bot.id)}>X</button>
+                        </div>
                         <h3>Bot Name:  {bot.name}</h3>
                         <p>Class :  {bot.bot_class}</p>
                         <p>Catch Phrase :  {bot.catchphrase}</p>
@@ -16,6 +19,7 @@ export default function BotCollection({bots, addToArmy}){
                         <p>Damage :  {bot.damage}</p>
                         <p>Created At :  {bot.created_at}</p>
                         <p>Updated at :  {bot.updated_at}</p>
+                        
                         
                     </div>
                 ))}

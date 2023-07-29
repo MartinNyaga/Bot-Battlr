@@ -46,6 +46,13 @@ div {
   
 }
 
+.delete-button {
+  position: relative;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+}
 
 
 

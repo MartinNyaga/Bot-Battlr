@@ -34,11 +34,26 @@ function App() {
     setYourBotArmy(yourBotArmy.filter((b) => b.id !== bot.id));
   };
 
+  //function to delete bot from deployed DB 
+
+  const handleBotDeletion = (botId) => {
+    fetch(`https://bot-app-data.onrender.com/bots/${botId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setBots((prevBots) =>
+        prevBots.filter((bot) => bot.id !== botId)
+        );
+      })
+      .catch((error) => console.error('Error deleting bots:', error));
+  };
+
   return (
     //Rendering bots on the web page
     <div className="App">
       <YourBotArmy bots={bots} yourBotArmy={yourBotArmy} removeFromArmy={removeFromYourBotArmy} />
-      <BotCollection bots={bots}  addToArmy={addToYourBotArmy}   />
+      <BotCollection bots={bots}  addToArmy={addToYourBotArmy} botDeletion={handleBotDeletion}   />
     </div>
   );
 }
