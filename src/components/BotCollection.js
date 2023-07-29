@@ -3,9 +3,9 @@ import React from "react";
 export default function BotCollection({bots}){
     //Renderd bots
         return(
-            <div>
+            <div className="container">
                 {bots.map((bot) => (
-                    <div key={bot.id}>
+                    <div className="element" key={bot.id}>
                         <img src={bot.avatar_url}/>
                         <h3>Bot Name:  {bot.name}</h3>
                         <p>Class :  {bot.bot_class}</p>
