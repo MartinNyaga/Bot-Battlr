@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function YourBotArmy({yourBotArmy, removeFromArmy}){
+export default function YourBotArmy({yourBotArmy, removeFromArmy, botDeletion}){
     // Function to handle removing a bot from the army
   const handleRemoveFromArmy = (bot) => {
     removeFromArmy(bot);
@@ -10,6 +10,9 @@ export default function YourBotArmy({yourBotArmy, removeFromArmy}){
                 {yourBotArmy.map((bot) => (
                     <div className="element" key={bot.id} onClick={() => handleRemoveFromArmy(bot)} >
                         <img src={bot.avatar_url} alt={bot.name}/>
+                        <div>
+                        <button className="delete-button" onClick={()=> botDeletion(bot.id)}>X</button>
+                        </div>
                         <h3>Bot Name:  {bot.name}</h3>
                         <p>Class :  {bot.bot_class}</p>
                         <p>Catch Phrase :  {bot.catchphrase}</p>

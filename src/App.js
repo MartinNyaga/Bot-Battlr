@@ -52,8 +52,8 @@ function App() {
   return (
     //Rendering bots on the web page
     <div className="App">
-      <YourBotArmy bots={bots} yourBotArmy={yourBotArmy} removeFromArmy={removeFromYourBotArmy} />
-      <BotCollection bots={bots}  addToArmy={addToYourBotArmy} botDeletion={handleBotDeletion}   />
+      <YourBotArmy bots={bots} yourBotArmy={yourBotArmy} removeFromArmy={removeFromYourBotArmy} botDeletion={handleBotDeletion} />
+      <BotCollection bots={bots}  addToArmy={addToYourBotArmy}    />
     </div>
   );
 }
