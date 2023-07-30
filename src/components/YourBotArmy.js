@@ -5,13 +5,20 @@ export default function YourBotArmy({yourBotArmy, removeFromArmy, botDeletion}){
   const handleRemoveFromArmy = (bot) => {
     removeFromArmy(bot);
   };
+
+  // Function to delete bot from db
+  const handleDeleteBot = (bot) => {
+    botDeletion(bot)
+    alert("Bot Discharged from Service!")
+  };
   return(
     <div className="container">
                 {yourBotArmy.map((bot) => (
                     <div className="element" key={bot.id} onClick={() => handleRemoveFromArmy(bot)} >
+                      <h2>Added To Army</h2>
                         <img src={bot.avatar_url} alt={bot.name}/>
                         <div>
-                        <button className="delete-button" onClick={()=> botDeletion(bot.id)}>X</button>
+                        <button className="delete-button" onClick={()=> handleDeleteBot(bot.id)}>X</button>
                         </div>
                         <h3>Bot Name:  {bot.name}</h3>
                         <p>Class :  {bot.bot_class}</p>

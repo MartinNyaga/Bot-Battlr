@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import BotCollection from './components/BotCollection';
 import YourBotArmy from './components/YourBotArmy';
-
+import SortBar from './components/SortBar';
 import './App.css';
 
 function App() {
   //Declared variables for rendering the bots
     const [bots, setBots] = useState([]);
     const [yourBotArmy, setYourBotArmy] = useState([]);
+    const [sortBy, setSortBy] = useState(null);
 
    
 
@@ -49,11 +50,17 @@ function App() {
       .catch((error) => console.error('Error deleting bots:', error));
   };
 
+  //function to handle sorting
+  const handleSortChange = (sortBy) => {
+    setSortBy(sortBy)
+  }
+
   return (
     //Rendering bots on the web page
     <div className="App">
       <YourBotArmy bots={bots} yourBotArmy={yourBotArmy} removeFromArmy={removeFromYourBotArmy} botDeletion={handleBotDeletion} />
-      <BotCollection bots={bots}  addToArmy={addToYourBotArmy}    />
+      <SortBar onSortChange={handleSortChange}/>
+      <BotCollection bots={bots}  addToArmy={addToYourBotArmy} sortBy={sortBy}   />
     </div>
   );
 }
