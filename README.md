@@ -40,7 +40,11 @@ The following have been used on this project:
 
 - Homepage 
 
-  <img src="" alt="screenshot" />
+  <img src="./public/screenshotHome.png" alt="screenshot" />
+
+- Added Bots to Army 
+
+  <img src="./public/screenshotAdd.png" alt="screenshot" />
 
 ## Known Bugs
 
