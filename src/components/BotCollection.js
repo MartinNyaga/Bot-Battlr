@@ -15,13 +15,13 @@ export default function BotCollection({bots, addToArmy, sortBy}){
 
     //Renderd bots
         return(
-            <div className="container">
+            <div className="star-wars-container">
                 {sortedBots.map((bot) => (
-                    <div className="element" key={bot.id} onClick={()=> addToArmy(bot)} >
+                    <div className="star-wars-bot" key={bot.id} onClick={()=> addToArmy(bot)} >
                         
-                        <img src={bot.avatar_url} alt={bot.name}/>
+                        <img className="star-wars-avatar" src={bot.avatar_url} alt={bot.name}/>
                         
-                        <h3>Bot Name:  {bot.name}</h3>
+                        <h3 className="star-wars-name">Bot Name:  {bot.name}</h3>
                         <p>Class :  {bot.bot_class}</p>
                         <p>Catch Phrase :  {bot.catchphrase}</p>
                         <p>Armor :  {bot.armor}</p>
