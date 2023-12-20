@@ -58,6 +58,7 @@ function App() {
   return (
     //Rendering bots on the web page
     <div className="App">
+      <h1 className="welcome-heading">Welcome to Bot Battle, choose your fighter</h1>
       <YourBotArmy bots={bots} yourBotArmy={yourBotArmy} removeFromArmy={removeFromYourBotArmy} botDeletion={handleBotDeletion} />
       <SortBar onSortChange={handleSortChange}/>
       <BotCollection bots={bots}  addToArmy={addToYourBotArmy} sortBy={sortBy}   />

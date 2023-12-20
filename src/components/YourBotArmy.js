@@ -12,12 +12,12 @@ export default function YourBotArmy({yourBotArmy, removeFromArmy, botDeletion}){
     alert("Bot Discharged from Service!")
   };
   return(
-    <div className="container">
+    <div className="your-bot-army-container">
                 {yourBotArmy.map((bot) => (
-                    <div className="element" key={bot.id} onClick={() => handleRemoveFromArmy(bot)} >
+                    <div className="your-bot-army-bot" key={bot.id} onClick={() => handleRemoveFromArmy(bot)} >
                       <h2>Added To Army</h2>
-                        <img src={bot.avatar_url} alt={bot.name}/>
-                        <div>
+                        <img className="your-bot-army-avatar" src={bot.avatar_url} alt={bot.name}/>
+                        <div className="your-bot-army-info">
                         <button className="delete-button" onClick={()=> handleDeleteBot(bot.id)}>X</button>
                         </div>
                         <h3>Bot Name:  {bot.name}</h3>
